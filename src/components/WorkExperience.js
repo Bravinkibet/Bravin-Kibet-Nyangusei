@@ -10,7 +10,7 @@ const WorkExperienceContainer = styled.div`
   background-image: url('https://i.pinimg.com/originals/c4/fb/19/c4fb1911393e2f611d26e7f68b89c03a.jpg');
   background-size: cover;
   background-position: center;
-  color: white;
+  color: black;
   text-align: center;
 `;
 
