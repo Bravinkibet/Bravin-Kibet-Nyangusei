@@ -3,22 +3,54 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ProjectsContainer = styled.div`
-  padding: 50px;
-  background-color: #282c34;
-  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://i.pinimg.com/originals/c4/fb/19/c4fb1911393e2f611d26e7f68b89c03a.jpg');
+  background-size: cover;
+  background-position: center;
+`;
+
+const ProjectsContent = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 20px;
+`;
+
+const Card = styled.div`
+  background-image: url('https://i.pinimg.com/564x/cd/6f/a6/cd6fa65a8169e04861fa06c9923ad6c9.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
+  padding: 20px;
   text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Projects = () => {
   return (
-    <ProjectsContainer id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="https://github.com/Bravinkibet/TeenSpace" style={{ color: 'lightblue' }}>Teen Space</a></li>
-        <li><a href="https://github.com/Bravinkibet/OneStopShop" style={{ color: 'lightblue' }}>OneStopShop</a></li>
-        <li><a href="https://github.com/Bravinkibet/MyAdventureQuest" style={{ color: 'lightblue' }}>My Adventure Quest</a></li>
-        <li><a href="https://github.com/Bravinkibet/Project2" style={{ color: 'lightblue' }}>Project 2</a></li>
-      </ul>
+    <ProjectsContainer>
+      <ProjectsContent>
+        <Card>
+          <h3>Teen Space</h3>
+          <p>Social platform for teenagers</p>
+        </Card>
+        <Card>
+          <h3>OneStopShop</h3>
+          <p>E-commerce platform</p>
+        </Card>
+        <Card>
+          <h3>My Adventure Quest</h3>
+          <p>Fun adventure game</p>
+        </Card>
+      </ProjectsContent>
     </ProjectsContainer>
   );
 };

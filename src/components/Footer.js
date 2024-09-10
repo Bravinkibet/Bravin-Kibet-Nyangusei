@@ -3,16 +3,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterContainer = styled.div`
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   padding: 20px;
-  background-color: #333;
-  color: white;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
 `;
 
 const Footer = () => {
   return (
     <FooterContainer>
-      <p>© 2024 Bravin Kibet Nyangusei. All Rights Reserved.</p>
+      <p>&copy; 2024 Bravin Kibet Nyangusei</p>
     </FooterContainer>
   );
 };
