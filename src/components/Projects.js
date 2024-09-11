@@ -7,23 +7,32 @@ import techBackground from '../Assets/tech.png'; // Import the new background im
 const ProjectsContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-image: url(${techBackground}); // Set the tech image as background for the entire container
+  align-items: flex-start; // Align items to the top so it allows scrolling
+  min-height: 100vh;
+  background-image: url(${techBackground});
   background-size: cover;
   background-position: center;
+  padding: 20px; // Padding for better spacing on smaller screens
+  overflow-y: auto; // Enable vertical scrolling if content overflows
 `;
 
+// Flex container for the project cards
 const ProjectsContent = styled.div`
   display: flex;
+  flex-wrap: wrap; // Wrap cards to a new row when needed
   justify-content: space-around;
+  gap: 20px;
   width: 100%;
-  padding: 20px;
-  gap: 20px; // Add space between the cards
+
+  @media (max-width: 768px) {
+    flex-direction: column; // Stack cards vertically on smaller screens
+    align-items: center;
+  }
 `;
 
+// Individual card styles
 const Card = styled.a`
-  background-image: url(${homeGif}); // Set the gif as background for each card
+  background-image: url(${homeGif});
   background-size: cover;
   background-position: center;
   width: 350px;
@@ -35,24 +44,35 @@ const Card = styled.a`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Optional: Add some shadow to cards for a nice effect
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-decoration: none; // Remove underline from links
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transform: scale(1.05); // Slight zoom effect on hover
+  }
 
   p {
-    position: relative; // Position relative for the bullet
-    padding-left: 20px; // Space for the bullet
-    
+    position: relative;
+    padding-left: 20px;
+
     &::before {
-      content: '•'; // Bullet character
-      position: absolute; // Position absolute to place the bullet
-      left: 0; // Align bullet to the left
-      color: white; // Color of the bullet
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: white;
     }
   }
 
-  &:hover {
-    cursor: pointer; // Change cursor to pointer on hover
-    opacity: 0.9; // Slightly fade the card on hover
+  @media (max-width: 768px) {
+    width: 100%; // Make the card full-width on smaller screens
+    max-width: 350px;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%; // Reduce width slightly on mobile screens
   }
 `;
 
@@ -79,9 +99,9 @@ const Projects = () => {
           <p>Every participant deserves moments of joy and fulfillment through immersive gameplay.</p>
         </Card>
         <Card href="https://github.com/Bravinkibet/project-2" title="Click to go to Project 2 app">
-          <h3>Babu Enterprices</h3>
-          <p>Babu enterprises is an online platform that offers products and services to its customers.</p>
-          <p>It is designed to help customers onlinely shop for goods and services.</p>
+          <h3>Babu Enterprises</h3>
+          <p>Babu Enterprises is an online platform that offers products and services to its customers.</p>
+          <p>It is designed to help customers conveniently shop for goods and services online.</p>
         </Card>
       </ProjectsContent>
     </ProjectsContainer>
